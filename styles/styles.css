@@ -34,17 +34,17 @@ body {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    cursor: pointer;
     opacity: ;
+    cursor: pointer;
     transition: opacity 0.5s ease;
   }
 
   .circle.pattern-1 {
-    background-image: url('/images/light-on-.png'); /* Add your styles for pattern 1 */
+    background-image: url('/images/light-on-.png'); 
   }
   
   .circle.pattern-2 {
-    background-image: url('/images/light-patter-2.png'); /* Add your styles for pattern 2 */
+    background-image: url('/images/light-patter-2.png'); 
   }
   
   #score,
