@@ -1,57 +1,61 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#background-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background-image: url("/images/background1.png");
+  background-size: cover;
+  z-index: -1; /* Send to the background */
+}
+
+#game-screen {
+  display: grid;
+  grid-template-columns: repeat(5, 91px); /* Adjustments */
+  gap: 50px;
+  text-align: center;
+  margin-top: 93px;
+  margin-left: 42px;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  /* opacity: ; */
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.circle.pattern-1 {
+  background-image: url("/images/light-on-.png");
+}
+
+.circle.pattern-2 {
+  background-image: url("/images/light-patter-2.png");
+}
+
+.circle.pattern-3 {
+    background-image: url("/images/wrong-light-.png");
   }
 
-  #background-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 900px; 
-    height: 900px; 
-    background-image: url('/images/background1.png');
-    background-size: cover;
-    z-index: -1; /* Send to the background */
-  }
-  
-  #game-screen {
-    display: grid;
-    grid-template-columns: repeat(5, 91px); /* Adjustments */
-    gap: 50px;
-    text-align: center;
-    margin-top: 93px; 
-    margin-left: 42px;
-  }
-
-  .circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    opacity: ;
-    cursor: pointer;
-    transition: opacity 0.5s ease;
-  }
-
-  .circle.pattern-1 {
-    background-image: url('/images/light-on-.png'); 
-  }
-  
-  .circle.pattern-2 {
-    background-image: url('/images/light-patter-2.png'); 
-  }
-  
-  #score,
-  #timer,
-  #lives {
-    color: rgb(120, 215, 223);
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-  }
+#score,
+#timer,
+#lives {
+  color: rgb(120, 215, 223);
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
