@@ -14,7 +14,7 @@ let badSound = new Audio("sound/alert.ogg");
 
 let level = 1;
 
-let timeLeft = 3000;
+let timeLeft = 1000;
 
 let remainingTime = 60;
 
@@ -30,6 +30,7 @@ function updateScoreAndLives() {
   livesElement.textContent = `Lives: ${lives}`;
 }
 
+let activateNewPattern = true;
 // Clicks on circles
 function handleCircleClick(event) {
   if (!isGameRunning) return; // Ignoring clicks if the game is not running
@@ -39,24 +40,25 @@ function handleCircleClick(event) {
   if (clickedCircle.classList.contains("pattern-1")) {
     score++;
     clickedCircle.classList.remove("pattern-1");
-
+   
     goodSound.currentTime = 0;
     goodSound.play();
 
-    if (score % 10 === 0) {
+   /* if (score % 10 === 0) {
       level++;
       timeLeft -= 500;
       console.log("Time left ===>", timeLeft);
       if (timeLeft === 1000) {
         alert("You're super fast!!!");
       }
-    }
+    }*/
 
-    activateRandomCircle();
   } else {
     console.log("Clicking empty");
     lives--;
-
+    
+    clickedCircle.classList.add("pattern-3");
+    
     badSound.currentTime = 0;
     badSound.play();
 
@@ -66,8 +68,13 @@ function handleCircleClick(event) {
         `Game Over! You lost all your lives.  Your final score was ${score}.`
       );
       resetGame();
+    } else {
+      setTimeout(() => {
+        clickedCircle.classList.remove("pattern-3");
+      }, 1000);
     }
   }
+  activateRandomCircle();
 
   updateScoreAndLives();
 }
@@ -88,7 +95,7 @@ function activateRandomCircle() {
       randomCircle.classList.remove("pattern-1");
     }, timeLeft); // 1 second (I can modified it for different levels)
 
-    // randomCircle.addEventListener('click', handleCircleClick);
+     //randomCircle.addEventListener('click', handleCircleClick);
   } else {
     alert(
       `Congratulations! You completed the level.  Your score for the level was ${score}.`
