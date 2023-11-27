@@ -1,5 +1,5 @@
 const circles = document.querySelectorAll(".circle");
-const startButton = document.getElementById("start-button");
+const startButton = document.getElementById("main-start-button");
 const scoreElement = document.getElementById("score");
 const livesElement = document.getElementById("lives");
 
@@ -14,7 +14,7 @@ let badSound = new Audio("sound/alert.ogg");
 
 let level = 1;
 
-let timeLeft = 1000;
+let timeLeft = 2000;
 
 let remainingTime = 60;
 
@@ -40,11 +40,11 @@ function handleCircleClick(event) {
   if (clickedCircle.classList.contains("pattern-1")) {
     score++;
     clickedCircle.classList.remove("pattern-1");
-   
+
     goodSound.currentTime = 0;
     goodSound.play();
 
-   /* if (score % 10 === 0) {
+    /* if (score % 10 === 0) {
       level++;
       timeLeft -= 500;
       console.log("Time left ===>", timeLeft);
@@ -52,13 +52,12 @@ function handleCircleClick(event) {
         alert("You're super fast!!!");
       }
     }*/
-
   } else {
     console.log("Clicking empty");
     lives--;
-    
+
     clickedCircle.classList.add("pattern-3");
-    
+
     badSound.currentTime = 0;
     badSound.play();
 
@@ -95,7 +94,7 @@ function activateRandomCircle() {
       randomCircle.classList.remove("pattern-1");
     }, timeLeft); // 1 second (I can modified it for different levels)
 
-     //randomCircle.addEventListener('click', handleCircleClick);
+    //randomCircle.addEventListener('click', handleCircleClick);
   } else {
     alert(
       `Congratulations! You completed the level.  Your score for the level was ${score}.`
@@ -111,8 +110,8 @@ function updateTimer() {
   timerElement.textContent = `Time: ${remainingTime}s`;
 }
 
-// Starting the game
-function startGame() {
+// Start the game
+function initGame() {
   isGameRunning = true;
   resetGame();
 
@@ -133,10 +132,15 @@ function startGame() {
       // Player status won or lost based on lives
       if (lives > 0) {
         alert(`Congratulations! You won with a score of ${score}.`);
+
+        // Show the winning page
+        document.getElementById("winning-page").style.display = "block";
+
       } else {
-        alert(
-          `Time's up! You lost all your lives. Your final score is ${score}.`
-        );
+       alert(`Time's up! You lost all your lives. Your final score is ${score}.`);
+       
+        // Show the losing page
+        document.getElementById("losing-page").style.display = "block";
       }
 
       isGameRunning = false;
@@ -152,6 +156,9 @@ function gameOver() {
   remainingTime = 60;
   updateScoreAndLives();
   updateTimer();
+
+  // Show the losing page
+  document.getElementById("losing-page").style.display = "block";
 }
 
 startButton.addEventListener("click", () => {

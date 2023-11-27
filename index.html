@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    <div id="main-page">
+      <img src="/images/main-title.png" alt="Background Image" />
+      <button id="main-start-button">Start Game</button>
+      <audio id="background-music" loop>
+        <source src="/sound/wyver9_Fast Level.wav" type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+
     <div id="background-container"></div>
     <div id="game-screen">
       <!-- Grid of Circles -->
@@ -41,7 +50,7 @@
       <div class="circle" id="circle-25"></div>
 
       <!-- Start Game -->
-      <button id="start-button">Start Game</button>
+      <!--<button id="start-button">Start Game</button>  (Lo retire para utilizar el button del main page)-->
 
       <!-- Score and Timer -->
       <div id="score">Score: 0</div>
@@ -49,6 +58,19 @@
       <div id="lives">Lives: 3</div>
     </div>
 
+    <!-- Losing Page -->
+    <div id="losing-page" class="ending-page">
+      <img src="/images/game-over.png" alt="Losing Background Image" />
+      <button id="restart-losing-button">Restart Game</button>
+    </div>
+
+    <!-- Winning Page -->
+    <div id="winning-page" class="ending-page">
+      <img src="/images/victory.png" alt="Winning Background Image" />
+      <button id="restart-winning-button">Restart Game</button>
+    </div>
+
     <script src="/js/game.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
