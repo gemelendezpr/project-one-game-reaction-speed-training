@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startGame() {
+    console.log("Function called")
     // Once the game start the instructions are hided
     instructionsPage.style.display = "none";
 
