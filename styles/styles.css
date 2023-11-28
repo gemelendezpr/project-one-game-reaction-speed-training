@@ -91,6 +91,51 @@ body {
     border-radius: 15px;
 }
 
+#instructions-page {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    max-width: 900px; 
+    width: 80%;
+    z-index: 9999; /* Ensure it's on top of other elements */
+  
+    /* Maybe add a background image */
+    background-image: url("/images/instructions-background.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #instructions-page h2 {
+    font-size: 24px;
+    color: rgb(7, 23, 163)313; 
+  }
+  
+  #instructions-page ol {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #instructions-page li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color:rgb(7, 23, 163)313; 
+  }
+  
+  #instructions-page p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgb(7, 23, 163)313;
+    font-weight: bold;
+  }
+  
+
 /* ending pages */
 .ending-page {
     display: none;

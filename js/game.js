@@ -44,6 +44,7 @@ function handleCircleClick(event) {
     goodSound.currentTime = 0;
     goodSound.play();
 
+    // Logic to decrease timeleft on active circles 
     /* if (score % 10 === 0) {
       level++;
       timeLeft -= 500;
@@ -92,7 +93,7 @@ function activateRandomCircle() {
 
     setTimeout(() => {
       randomCircle.classList.remove("pattern-1");
-    }, timeLeft); // 1 second (I can modified it for different levels)
+    }, timeLeft); // 1 second (I can modified it for different levels, now established on timeLeft)
 
     //randomCircle.addEventListener('click', handleCircleClick);
   } else {
