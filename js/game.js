@@ -9,8 +9,8 @@ let score = 0;
 let lives = 3;
 let isGameRunning = false;
 
-let goodSound = new Audio("sound/Laser_00.mp3");
-let badSound = new Audio("sound/alert.ogg");
+let goodSound = new Audio("./sound/Laser_00.mp3");
+let badSound = new Audio("./sound/alert.ogg");
 
 let level = 1;
 
