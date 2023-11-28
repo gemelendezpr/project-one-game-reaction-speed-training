@@ -14,7 +14,8 @@ let badSound = new Audio("sound/alert.ogg");
 
 let level = 1;
 
-let timeLeft = 2000;
+let timeLeftPattern1 = 2000;
+let timeLeftPattern2 = 1000;
 
 let remainingTime = 60;
 
@@ -30,6 +31,11 @@ function updateScoreAndLives() {
   livesElement.textContent = `Lives: ${lives}`;
 }
 
+function handleGoodClick() {
+  goodSound.currentTime = 0;
+  goodSound.play();
+}
+
 let activateNewPattern = true;
 // Clicks on circles
 function handleCircleClick(event) {
@@ -40,11 +46,8 @@ function handleCircleClick(event) {
   if (clickedCircle.classList.contains("pattern-1")) {
     score++;
     clickedCircle.classList.remove("pattern-1");
-
-    goodSound.currentTime = 0;
-    goodSound.play();
-
-    // Logic to decrease timeleft on active circles 
+    handleGoodClick();
+    // Logic to decrease timeleft on active circles
     /* if (score % 10 === 0) {
       level++;
       timeLeft -= 500;
@@ -55,14 +58,16 @@ function handleCircleClick(event) {
     }*/
   } else {
     //Now the the pattern-3 don't appears once the game has been restarted
+    clickedCircle.classList.contains("pattern-2");
+
+    clickedCircle.classList.add("pattern-3");
+
     setTimeout(() => {
-        clickedCircle.classList.remove("pattern-3");
-      }, 1000);
+      clickedCircle.classList.remove("pattern-3");
+    }, 500);
 
     console.log("Clicking empty");
     lives--;
-
-    clickedCircle.classList.add("pattern-3");
 
     badSound.currentTime = 0;
     badSound.play();
@@ -80,6 +85,7 @@ function handleCircleClick(event) {
     }*/
   }
   activateRandomCircle();
+  activatePattern2();
 
   updateScoreAndLives();
 }
@@ -98,7 +104,7 @@ function activateRandomCircle() {
 
     setTimeout(() => {
       randomCircle.classList.remove("pattern-1");
-    }, timeLeft); // 1 second (I can modified it for different levels, now established on timeLeft)
+    }, timeLeftPattern1); // 1 second (I can modified it for different levels, now established on timeLeftPattern1)
 
     //randomCircle.addEventListener('click', handleCircleClick);
   } else {
@@ -106,6 +112,26 @@ function activateRandomCircle() {
       `Congratulations! You completed the level.  Your score for the level was ${score}.`
     );
     resetGame();
+  }
+}
+
+// Activate pattern-2
+function activatePattern2() {
+  const inactiveCircles = Array.from(circles).filter(
+    (circle) => !circle.classList.contains("pattern-2")
+  );
+
+  if (inactiveCircles.length > 0) {
+    const randomIndex = Math.floor(Math.random() * inactiveCircles.length);
+    const randomCircle = inactiveCircles[randomIndex];
+
+    randomCircle.classList.add("pattern-2");
+
+    setTimeout(() => {
+      randomCircle.classList.remove("pattern-2");
+    }, timeLeftPattern2);
+  } else {
+    // Add a diferent logic for pattern-2 ?
   }
 }
 
@@ -122,6 +148,7 @@ function initGame() {
   resetGame();
 
   activateRandomCircle();
+  activatePattern2();
 
   // Disabling the start button during the game because if its available it just continue to make the pattern faster. It don't start from the beginning.
   startButton.disabled = true;
@@ -141,10 +168,11 @@ function initGame() {
 
         // Show the winning page
         document.getElementById("winning-page").style.display = "block";
-
       } else {
-       alert(`Time's up! You lost all your lives. Your final score is ${score}.`);
-       
+        alert(
+          `Time's up! You lost all your lives. Your final score is ${score}.`
+        );
+
         // Show the losing page
         document.getElementById("losing-page").style.display = "block";
       }
