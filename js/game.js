@@ -54,6 +54,11 @@ function handleCircleClick(event) {
       }
     }*/
   } else {
+    //Now the the pattern-3 don't appears once the game has been restarted
+    setTimeout(() => {
+        clickedCircle.classList.remove("pattern-3");
+      }, 1000);
+
     console.log("Clicking empty");
     lives--;
 
@@ -67,12 +72,12 @@ function handleCircleClick(event) {
       alert(
         `Game Over! You lost all your lives.  Your final score was ${score}.`
       );
-      resetGame();
-    } else {
+      //resetGame();
+    } /*else {
       setTimeout(() => {
         clickedCircle.classList.remove("pattern-3");
       }, 1000);
-    }
+    }*/
   }
   activateRandomCircle();
 
