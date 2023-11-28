@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   restartWinningButton.addEventListener("click", restartGame);
 
   function showInstructions() {
+    console.log('hittingButton')
     // Hide main page
     mainPage.style.display = "none";
 
