@@ -35,11 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function restartGame() {
-    backgroundMusic.pause(); // Stop background music
-    mainPage.style.display = "block"; // Show the main page
-    losingPage.style.display = "none"; // Hide the ending pages
-    winningPage.style.display = "none"; // Hide the ending pages
-  }
+    window.location.reload()
+  //   backgroundMusic.pause(); // Stop background music
+  //   mainPage.style.display = "block"; // Show the main page
+  //   losingPage.style.display = "none"; // Hide the ending pages
+  //   winningPage.style.display = "none"; // Hide the ending pages
+   }
 
   backgroundMusic.addEventListener("ended", function () { // Background music loop event
     this.currentTime = 0;
