@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
     goodSound.play();
   }
 
-  
   function handleCircleClick(event) {
     if (!isGameRunning) return; // Ignoring clicks if the game is not running
 
@@ -144,34 +143,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startGame() {
-    // Once the game start the instructions are hided
-    instructionsPage.style.display = "none";
-
-    // The background music its still playing for instructions
-    //backgroundMusic.pause();
-
-    // The game screen its enable
-    gameScreen.style.display = "grid";
+    
+    instructionsPage.style.display = "none"; // Once the game start the instructions are hided
+    gameScreen.style.display = "grid"; // The game screen its enable
     gameScreen.style.zIndex = "9999";
-
-    // Play background music for the game
-    backgroundMusic.play();
-
-    // The game start logic in game.js its triggered
-    initGame();
+    backgroundMusic.play(); 
+    initGame(); // The game start logic in game.js its triggered
   }
 
-  // Start the game
-  function initGame() {
-    console.log("line 248");
+  function initGame() { // Start the game
     isGameRunning = true;
     resetGame();
-
     activateRandomCircle();
     activatePattern2();
 
-    // Disabling the start button during the game because if its available it just continue to make the pattern faster. It don't start from the beginning.
-    startButton.disabled = true;
+    startButton.disabled = true;// Disabling the start button during the game because if its available it just continue to make the pattern faster. It don't start from the beginning.
 
     // Timer update
     timerInterval = setInterval(() => {
@@ -214,10 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the losing page
     document.getElementById("losing-page").style.display = "block";
   }
-
-  // startButton.addEventListener("click", () => {
-  //   startGame();
-  // });
 
   let allCircles = document.getElementsByClassName("circle");
 
