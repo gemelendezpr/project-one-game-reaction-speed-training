@@ -107,9 +107,6 @@ body {
     z-index: 9999; /* Ensure it's on top of other elements */
   
     /* Maybe add a background image */
-    background-image: url("../images/instructions-background.jpg");
-    background-size: cover;
-    background-position: center;
   }
   
   #instructions-page h2 {
