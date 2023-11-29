@@ -2,6 +2,7 @@ const circles = document.querySelectorAll(".circle");
 const startButton = document.getElementById("main-start-button");
 const scoreElement = document.getElementById("score");
 const livesElement = document.getElementById("lives");
+const instructionsPage = document.getElementById("instructions-page");
 
 let timerInterval;
 
@@ -141,6 +142,24 @@ function updateTimer() {
   const timerElement = document.getElementById("timer");
   timerElement.textContent = `Time: ${remainingTime}s`;
 }
+
+function startGame() {
+    console.log("Line 42 Function called")
+    // Once the game start the instructions are hided
+    instructionsPage.style.display = "none";
+
+    // The background music its still playing for instructions
+    //backgroundMusic.pause();
+
+    // The game screen its enable
+    document.getElementById("game-screen").style.display = "grid";
+
+    // Play background music for the game
+    backgroundMusic.play();
+
+    // The game start logic in game.js its triggered
+    initGame();
+  }
 
 // Start the game
 function initGame() {
