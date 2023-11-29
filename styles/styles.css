@@ -14,7 +14,7 @@ body {
   transform: translate(-50%, -50%);
   width: 900px;
   height: 900px;
-  background-image: url("./images/background1.png");
+  background-image: url("../images/background1.png");
   background-size: cover;
   z-index: 1; /* Send to the background */
 }
@@ -40,15 +40,15 @@ body {
 }
 
 .circle.pattern-1 {
-  background-image: url("./images/light-on-.png");
+  background-image: url("../images/light-on-.png");
 }
 
 .circle.pattern-2 {
-  background-image: url("./images/light-patter-2.png");
+  background-image: url("../images/light-patter-2.png");
 }
 
 .circle.pattern-3 {
-  background-image: url("./images/wrong-light-.png");
+  background-image: url("../images/wrong-light-.png");
 }
 
 #score,
@@ -107,7 +107,7 @@ body {
     z-index: 9999; /* Ensure it's on top of other elements */
   
     /* Maybe add a background image */
-    background-image: url("./images/instructions-background.jpg");
+    background-image: url("../images/instructions-background.jpg");
     background-size: cover;
     background-position: center;
   }
