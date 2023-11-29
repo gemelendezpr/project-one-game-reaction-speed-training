@@ -34,7 +34,6 @@ body {
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  /* opacity: ; */
   cursor: pointer;
   transition: opacity 0.5s ease;
 }
@@ -58,7 +57,6 @@ body {
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
-  
 }
 
 #main-page {
@@ -79,89 +77,89 @@ body {
 }
 
 #main-page button {
-    position: absolute;
-    top: 96%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
+  position: absolute;
+  top: 96%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
 }
 
 #instructions-page {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
-    max-width: 900px; 
-    width: 80%;
-    z-index: 9999; /* Ensure it's on top of other elements */
-  
-    /* Maybe add a background image */
-  }
-  
-  #instructions-page h2 {
-    font-size: 24px;
-    color: rgb(7, 23, 163)313; 
-  }
-  
-  #instructions-page ol {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #instructions-page li {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color:rgb(7, 23, 163)313; 
-  }
-  
-  #instructions-page p {
-    margin-top: 20px;
-    font-size: 18px;
-    color: rgb(7, 23, 163)313;
-    font-weight: bold;
-  }
-  
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  max-width: 900px;
+  width: 80%;
+  z-index: 9999; /* Ensure it's on top of other elements */
+}
 
-/* ending pages */
+#instructions-page h2 {
+  font-size: 24px;
+  color: rgb(7, 23, 163) 313;
+}
+
+#instructions-page ol {
+  list-style: none;
+  padding: 0;
+}
+
+#instructions-page li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: rgb(7, 23, 163) 313;
+}
+
+#instructions-page p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: rgb(7, 23, 163) 313;
+  font-weight: bold;
+}
+
 .ending-page {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 900px;
-    height: 900px;
-    background-size: cover;
-    z-index: 9999;
-    text-align: center;
-  }
-  
-  .ending-page img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .ending-page button {
-    position: absolute;
-    bottom: -2%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-  }
-  
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background-size: cover;
+  z-index: 9999;
+  text-align: center;
+}
+
+.ending-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ending-page button {
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+}

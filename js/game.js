@@ -144,7 +144,6 @@ function updateTimer() {
 }
 
 function startGame() {
-    console.log("Line 42 Function called")
     // Once the game start the instructions are hided
     instructionsPage.style.display = "none";
 
